@@ -34,6 +34,7 @@ def eda(data):
     ax1.set_ylabel('Cantidad de Clientes')  # Etiqueta del eje Y
     plt.xticks(rotation=45)
     fig1.savefig(output_path+'top10_products_reviews.png')
+
     # Agregamos el grafico la distribución del sentimiento si la compra está verificada o no
     fig2,ax2=plt.subplots(figsize=(10,10))
     sentiment_verified=data.groupby(['sentiment','verified_purchase'],as_index=False)['product_id'].count().sort_values(by='product_id',ascending=False)
